@@ -1,0 +1,13 @@
+<h1>Welcome to our Reddit Clone!</h1>
+
+<p class="lead">Check out some of the latest Posts</p>
+
+<% @posts.each do |post| -%>
+  <article>
+    <h3>
+      <%= post.title %>
+      <small><%= l(post.created_at, format: :long) %></small>
+    </h3>
+    <p><%= truncate(post.description, length: 200) %></p>
+  </article>
+<% end -%>
